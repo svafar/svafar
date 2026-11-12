@@ -1,0 +1,292 @@
+{
+  "source": "Hacking Hunger design system tokens v13, 12 Nov 2026",
+  "note": "Proposal only; nothing applied. Outlines are the fill at 55% per the system rule. See HANDOFF.md.",
+  "changes": [
+    {
+      "token": "mol-semaglutide",
+      "now": "#6d7ea2",
+      "proposed": "#217871",
+      "outline": "#12423e",
+      "status": "change",
+      "why": "The drug in the GLP-1 family hue, deepest; GLP-1 refined."
+    },
+    {
+      "token": "mol-glp1",
+      "proposed": "#5d928a",
+      "outline": "#33504c",
+      "status": "new",
+      "why": "Native GLP-1, the softer sibling (S02-S05, S11 vagus)."
+    },
+    {
+      "token": "glp1-spent",
+      "proposed": "#909b9a",
+      "status": "new",
+      "why": "The signal gone: clipped GLP-1 (S03), curve after stopping (S12)."
+    },
+    {
+      "token": "mol-orforglipron",
+      "proposed": "#206079",
+      "outline": "#123543",
+      "status": "new",
+      "why": "Next generation, family leaning blue, deep enough to show in the lilac receptor (S12)."
+    },
+    {
+      "token": "camp",
+      "proposed": "#4c9ea1",
+      "outline": "#2a5759",
+      "status": "new",
+      "why": "cAMP, the signal inside the cell; mid teal so it shows on honey (S06, S07)."
+    },
+    {
+      "token": "drug-liquid",
+      "now": "#C3D1EA",
+      "proposed": "#9dd8d4",
+      "status": "change",
+      "why": "Pen window and depot pool (Injection, Depot cards)."
+    },
+    {
+      "token": "drug-liquid-edge",
+      "now": "#8C9EC6",
+      "proposed": "#68ada8",
+      "status": "change",
+      "why": "Edge of the pool."
+    },
+    {
+      "token": "drug-grain",
+      "now": "#56689A",
+      "proposed": "#217871",
+      "status": "change",
+      "why": "Drug grains = mol-semaglutide."
+    },
+    {
+      "token": "mol-glp1r",
+      "now": "#84a06b",
+      "proposed": "#a18fb9",
+      "outline": "#594f66",
+      "status": "change",
+      "why": "Receptor to lilac so the teal drug reads as a separate thing inside it."
+    },
+    {
+      "token": "mol-gprotein",
+      "now": "#a183ae",
+      "proposed": "#788f62",
+      "outline": "#424f36",
+      "status": "change",
+      "why": "G protein takes the sage; mauve would sit beside the lilac receptor."
+    },
+    {
+      "token": "mol-adenylyl-cyclase",
+      "now": "#789ba7",
+      "proposed": "#66718f",
+      "outline": "#383e4f",
+      "status": "change",
+      "why": "Steel matched the cAMP it makes (cvd 1.0)."
+    },
+    {
+      "token": "mol-pka",
+      "proposed": "#907c6c",
+      "outline": "#4f443b",
+      "status": "new",
+      "why": "Quiet machinery (S06); placeholder for the S06 sheet."
+    },
+    {
+      "token": "mol-epac2",
+      "proposed": "#766558",
+      "outline": "#413830",
+      "status": "new",
+      "why": "Quiet machinery (S06); placeholder for the S06 sheet."
+    },
+    {
+      "token": "mol-glut4",
+      "now": "#b16f89",
+      "proposed": "#be859b",
+      "outline": "#694955",
+      "status": "change",
+      "why": "Lighter so insulin is the deeper actor (S01, S09)."
+    },
+    {
+      "token": "mol-glucagon",
+      "proposed": "#947aa8",
+      "outline": "#51435c",
+      "status": "new",
+      "why": "Alpha-cell lilac deepened (S08)."
+    },
+    {
+      "token": "mol-somatostatin",
+      "proposed": "#956186",
+      "outline": "#52354a",
+      "status": "new",
+      "why": "Delta mauve deepened (S08)."
+    },
+    {
+      "token": "mol-dpp4",
+      "proposed": "#585a66",
+      "outline": "#303238",
+      "status": "new",
+      "why": "Graphite: the cold machine that clips GLP-1 (S03)."
+    },
+    {
+      "token": "mol-adiponectin",
+      "now": "#5c875d",
+      "proposed": "#5774a9",
+      "outline": "#30405d",
+      "status": "change",
+      "why": "Green would read as the drug acting on fat; S09 is explicitly indirect."
+    },
+    {
+      "token": "adiponectin-grain",
+      "now": "#4F7A52",
+      "proposed": "#43629c",
+      "status": "change",
+      "why": "FatCells card grains."
+    },
+    {
+      "token": "glucose",
+      "proposed": "#ba7e2d",
+      "status": "new",
+      "why": "Deep amber for glucose, ATP, calcium inside cells and for charts."
+    },
+    {
+      "token": "glucose-light",
+      "now": "#F5C766",
+      "proposed": "#F5C766",
+      "status": "new token, value kept",
+      "why": "The meal on diagrams (Digestion card)."
+    },
+    {
+      "token": "nausea",
+      "proposed": "#a5aa73",
+      "status": "new",
+      "why": "Area postrema flicker (S11), away from the teal family."
+    },
+    {
+      "token": "extra-ground",
+      "now": "#efc3b0",
+      "proposed": "#f3bfbd",
+      "status": "change",
+      "why": "Outside the cell truly rose, continuing the blood."
+    },
+    {
+      "token": "extra-tile",
+      "now": "#e7b4a0",
+      "proposed": "#ebb0ad",
+      "status": "change",
+      "why": "Follows extra-ground."
+    },
+    {
+      "token": "extra-line",
+      "now": "#c18873",
+      "proposed": "#c58484",
+      "status": "change",
+      "why": "Follows extra-ground."
+    },
+    {
+      "token": "chart-1",
+      "now": "#d5945e",
+      "proposed": "#217871",
+      "status": "change",
+      "why": "Series: semaglutide (drug arm). Order: drug, placebo, glucose, native GLP-1."
+    },
+    {
+      "token": "chart-2",
+      "now": "#924761",
+      "proposed": "#9a9098",
+      "status": "change",
+      "why": "Series: placebo, neutral."
+    },
+    {
+      "token": "chart-3",
+      "now": "#339a7c",
+      "proposed": "#ba7e2d",
+      "status": "change",
+      "why": "Series: glucose."
+    },
+    {
+      "token": "chart-4",
+      "now": "#115a8b",
+      "proposed": "#63a79f",
+      "status": "change",
+      "why": "Series: native GLP-1."
+    },
+    {
+      "token": "bilayer-head",
+      "now": "#d9a143",
+      "proposed": "#d5ab6b",
+      "status": "test",
+      "why": "Quieter membrane."
+    },
+    {
+      "token": "bilayer-line",
+      "now": "#865706",
+      "proposed": "#9a723e",
+      "status": "test",
+      "why": "Quieter membrane."
+    },
+    {
+      "token": "nucleus",
+      "now": "#5b3b70",
+      "proposed": "#6b4b80",
+      "status": "test",
+      "why": "One step lighter."
+    },
+    {
+      "token": "cell-wall",
+      "now": "#6b4a70",
+      "proposed": "#7f5e84",
+      "status": "test",
+      "why": "One step lighter."
+    },
+    {
+      "token": "mol-albumin",
+      "now": "#b2995a",
+      "proposed": "#b2995a",
+      "status": "keep",
+      "why": "Straw; gold (first pass) withdrawn once the receptor left sage."
+    },
+    {
+      "token": "mol-insulin",
+      "now": "#b16356",
+      "proposed": "#b16356",
+      "status": "keep",
+      "why": "Insulin family rose."
+    },
+    {
+      "token": "mol-insulin-receptor",
+      "now": "#9d99ab",
+      "proposed": "#9d99ab",
+      "status": "keep",
+      "why": "Already a grey lilac: the S01 lock."
+    },
+    {
+      "token": "cell-l / granule-l / plume-glp1",
+      "now": "#60ac9d / #2d6c64 / #96d1c3",
+      "proposed": "same",
+      "status": "keep",
+      "why": "Anchor of the GLP-1 family; fix usage notes that call it the receptor teal."
+    },
+    {
+      "token": "mol-exendin4",
+      "now": "#b88767",
+      "status": "retire",
+      "why": "Not in script v2.1; use 4ZGM for S07."
+    },
+    {
+      "token": "mol-pi3k-p110",
+      "now": "#639d95",
+      "status": "retire",
+      "why": "Not in script v2.1."
+    },
+    {
+      "token": "mol-pi3k-p85",
+      "now": "#9a8f55",
+      "status": "retire",
+      "why": "Not in script v2.1."
+    },
+    {
+      "token": "mol-rgs",
+      "now": "#ca8575",
+      "status": "retire",
+      "why": "Not in script v2.1."
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+{
+ "name": "Hacking Hunger",
+ "version": 13,
+ "meta": {
+  "note": "Molecular look v3 locked 2026-11-11; tissue looks locked 2026-11-10 and 11. Molecular lengths are in SVG pixels at 10 px per \u00e5ngstr\u00f6m, the scale of the molecule icons. Sources of truth in the repository: pipeline/icons/molecule_depth.py (molecules), assets/icons/palette_v4.json, pipeline/organs/*.py (tissue)."
+ },
+ "color": {
+  "themes": [
+   {
+    "id": "plate",
+    "name": "Plate"
+   }
+  ],
+  "tokens": [
+   {
+    "name": "paper",
+    "value": "#f2e9d8",
+    "usage": "The veil that eases a picture back while something is named, and the ground of title cards. Never pure white."
+   },
+   {
+    "name": "ink",
+    "value": "#2a1f33",
+    "usage": "Captions, labels and the double plate frame, always on paper. At tissue scale also the outline of a whole structure (an acinus, the gland, a villus contour, a vessel wall). Never a line on a molecule, never a nucleus."
+   },
+   {
+    "name": "ink-muted",
+    "value": "#5c5160",
+    "usage": "Label lines, scene codes and scale-bar text, on paper."
+   },
+   {
+    "name": "extra-ground",
+    "value": "#efc3b0",
+    "usage": "Extracellular field at molecular scale: a quiet pink. Outside the cell is where the blood is, so this ground continues the rose of the blood. The upper half of every membrane frame, the whole field for albumin and other molecules in plasma. Changed over with the intracellular colour on 2026-11-11."
+   },
+   {
+    "name": "extra-line",
+    "value": "#c18873",
+    "usage": "Lattice lines of the six-fold rosette on extra-ground, 0.4 \u00c5 wide. A deeper tint of the ground: decorative, quiet by design."
+   },
+   {
+    "name": "extra-tile",
+    "value": "#e7b4a0",
+    "usage": "The six-pointed star tiles inside the extracellular hexagons."
+   },
+   {
+    "name": "intra-ground",
+    "value": "#f0cea4",
+    "usage": "Intracellular field at molecular scale: a honey ochre, kin to the honey of the pancreas cells. The lower half of every membrane frame, the whole field for molecules inside the cell. Changed over with the extracellular colour on 2026-11-11."
+   },
+   {
+    "name": "intra-line",
+    "value": "#c0985e",
+    "usage": "Lattice lines of the six-petal flowers on intra-ground, 0.4 \u00c5 wide. A deeper tint of the ground."
+   },
+   {
+    "name": "intra-tile",
+    "value": "#e8bf90",
+    "usage": "First petal tint of the intracellular flowers; alternates with intra-tile-2 around each flower."
+   },
+   {
+    "name": "intra-tile-2",
+    "value": "#dcb381",
+    "usage": "Second petal tint of the intracellular flowers."
+   },
+   {
+    "name": "bilayer-fill",
+    "value": "#e7bd7e",
+    "usage": "The 36 \u00c5 bilayer band between the two fields: amber, a step fuller than either field so it reads as a different material."
+   },
+   {
+    "name": "bilayer-line",
+    "value": "#865706",
+    "usage": "Bilayer edge lines (0.6 \u00c5), head outlines, tail zig-zags and the faint midline."
+   },
+   {
+    "name": "bilayer-head",
+    "value": "#d9a143",
+    "usage": "Round lipid head tiles, 3 \u00c5 radius at 7 \u00c5 pitch, one row per leaflet facing outward."
+   },
+   {
+    "name": "mol-glp1r",
+    "value": "#84a06b",
+    "usage": "GLP-1 receptor in every complex. Sage green (teal #639d95 until 2026-11-12, when the drug turned slate blue and the three molecules of the complex were given three plainly different colours). A molecule keeps one colour everywhere in the film. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-glp1r-line",
+    "value": "#48583a",
+    "usage": "Outline of GLP-1R: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-semaglutide",
+    "value": "#6d7ea2",
+    "usage": "Semaglutide, the drug: slate blue, a step deeper than the rest so that it stands apart from the receptor that holds it. Crimson #b24561 until 2026-11-12: when it is injected the drug is a pale blue liquid (see the Depot card), so its molecule is blue too. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-semaglutide-line",
+    "value": "#3b4559",
+    "usage": "Outline of semaglutide: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-gprotein",
+    "value": "#a183ae",
+    "usage": "Gs and Go, all chains: mauve (slate blue #8793ac until 2026-11-12; the drug took the slate). The chains share the fill; the outline marks where one ends. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-gprotein-line",
+    "value": "#58485f",
+    "usage": "Outline of G protein: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-exendin4",
+    "value": "#b88767",
+    "usage": "Exendin-4: warm taupe. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-exendin4-line",
+    "value": "#654a38",
+    "usage": "Outline of exendin-4: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-albumin",
+    "value": "#b2995a",
+    "usage": "Serum albumin: straw. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-albumin-line",
+    "value": "#615431",
+    "usage": "Outline of albumin: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-insulin-receptor",
+    "value": "#9d99ab",
+    "usage": "Insulin receptor ectodomain: cool grey-lilac. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-insulin-receptor-line",
+    "value": "#56545e",
+    "usage": "Outline of insulin receptor: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-insulin",
+    "value": "#b16356",
+    "usage": "Insulin: brick rose. It never shares a frame with semaglutide at the same scale. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-insulin-line",
+    "value": "#61362f",
+    "usage": "Outline of insulin: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-glut4",
+    "value": "#b16f89",
+    "usage": "GLUT4, the sugar gate: a dusty rose (a sage green until 2026-11-12, which the GLP-1 receptor's new green came too close to). Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-glut4-line",
+    "value": "#613d4b",
+    "usage": "Outline of GLUT4: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-adenylyl-cyclase",
+    "value": "#789ba7",
+    "usage": "Adenylyl cyclase 9: steel blue. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-adenylyl-cyclase-line",
+    "value": "#42555b",
+    "usage": "Outline of adenylyl cyclase: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-pi3k-p110",
+    "value": "#639d95",
+    "usage": "PI3K catalytic subunit p110: teal, the teal the GLP-1 receptor had until 2026-11-12 (p110 was a mauve too near the G protein's new one). Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-pi3k-p110-line",
+    "value": "#365651",
+    "usage": "Outline of PI3K p110: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-pi3k-p85",
+    "value": "#9a8f55",
+    "usage": "PI3K regulatory subunit p85: olive straw. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-pi3k-p85-line",
+    "value": "#544e2e",
+    "usage": "Outline of PI3K p85: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-rgs",
+    "value": "#ca8575",
+    "usage": "RGS16: clay. Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-rgs-line",
+    "value": "#6f4940",
+    "usage": "Outline of RGS: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "mol-adiponectin",
+    "value": "#5c875d",
+    "usage": "Adiponectin: a deeper leaf green (a teal-green until 2026-11-12, which PI3K's teal came too close to). Fill; its light shape is this mixed 28% toward mol-light, its shadow shape this mixed 32% toward its own outline colour."
+   },
+   {
+    "name": "mol-adiponectin-line",
+    "value": "#324a33",
+    "usage": "Outline of adiponectin: the fill shaded to 55%. Every molecule outline is computed this way, never chosen."
+   },
+   {
+    "name": "wash-pancreas",
+    "value": "#f2b58e",
+    "usage": "Tier 3: the pancreas, a honey wash under an ink outline. Lobules are toned from it toward shadow-pancreas or light-pancreas, never darkened. Locked 2026-11-10 on zoom sheet v5."
+   },
+   {
+    "name": "wash-gut",
+    "value": "#e5a7b2",
+    "usage": "Tier 3: the gut, a pink set apart from the honey pancreas. Enterocytes of the villi field. Locked 2026-11-10 (pink sheet v1, a third of the way from rose to orchid)."
+   },
+   {
+    "name": "wash-brain",
+    "value": "#c9bdc6",
+    "usage": "Placeholder, not yet workshopped: brain, hypothalamus and brainstem wash. It will get its own hue family, with a shadow and a light hue, on a sheet of options."
+   },
+   {
+    "name": "wash-liver",
+    "value": "#b98079",
+    "usage": "Placeholder, not yet workshopped: liver wash. It will get its own hue family, with a shadow and a light hue, on a sheet of options."
+   },
+   {
+    "name": "wash-adipose",
+    "value": "#e0cfa2",
+    "usage": "Placeholder, not yet workshopped: adipose tissue wash. Pale by nature (1.3:1 on paper); its ink line carries the form. It will get its own hue family, with a shadow and a light hue, on a sheet of options."
+   },
+   {
+    "name": "wash-muscle",
+    "value": "#c79089",
+    "usage": "Placeholder, not yet workshopped: skeletal and heart muscle wash. It will get its own hue family, with a shadow and a light hue, on a sheet of options."
+   },
+   {
+    "name": "wash-nerve",
+    "value": "#c8b493",
+    "usage": "Placeholder, not yet workshopped: the vagus and other nerves, drawn as traced fibres in this wash with an ink line. It will get its own hue family, with a shadow and a light hue, on a sheet of options."
+   },
+   {
+    "name": "wash-blood",
+    "value": "#d2565a",
+    "usage": "Red blood cells at tier 2: coral red discs at every tilt, shaded toward blood-wine in the hollow and lit with blood-glow on the rim. Locked 2026-11-11."
+   },
+   {
+    "name": "wash-vessel",
+    "value": "#e88e80",
+    "usage": "The lining of a vessel at tier 2: flat endothelial cells one cell thick, with plum nuclei that bulge into the lumen."
+   },
+   {
+    "name": "silhouette",
+    "value": "#8c83ab",
+    "usage": "Tier 4: the body silhouette, traced from the reference figure, 175 cm, no face, one flat lavender tint on paper; the lit organ is the only warm colour inside it."
+   },
+   {
+    "name": "duotone-mid",
+    "value": "#9a8a86",
+    "usage": "Proposal, not yet workshopped. Tier 4 archive photographs: midtone of the duotone between ink (shadows) and paper (highlights). No other colour on a photograph."
+   },
+   {
+    "name": "chart-1",
+    "value": "#d5945e",
+    "usage": "Proposal, not yet workshopped. Data plates, series 1 (amber): glucose and energy. Series order is fixed, never cycled; a series keeps its colour when others are hidden. Lines carry direct labels, so 2.1:1 on paper is accepted."
+   },
+   {
+    "name": "chart-2",
+    "value": "#924761",
+    "usage": "Proposal, not yet workshopped. Data plates, series 2 (rose): semaglutide, the treated arm, the drug. Kin to mol-semaglutide."
+   },
+   {
+    "name": "chart-3",
+    "value": "#339a7c",
+    "usage": "Proposal, not yet workshopped. Data plates, series 3 (teal): GLP-1, the receptor, incretin signals. Kin to mol-glp1r. Direct-labelled (2.9:1)."
+   },
+   {
+    "name": "chart-4",
+    "value": "#115a8b",
+    "usage": "Proposal, not yet workshopped. Data plates, series 4 (blue): placebo, control, baseline. The four pass the colour-vision checks in this order; never add a fifth hue, fold it into Other or a second plate."
+   },
+   {
+    "name": "chart-grid",
+    "value": "#dcd1bf",
+    "usage": "Proposal, not yet workshopped. Hairline grid on data plates, 1.25:1 on paper, recessive. Axis lines and tick labels are ink-muted; titles and values are ink."
+   },
+   {
+    "name": "wash-duodenum",
+    "value": "#efa39a",
+    "usage": "Tier 3: the duodenal C the head of the pancreas sits in, with a lit edge and a shadow edge; no line crosses the head."
+   },
+   {
+    "name": "wash-acinar",
+    "value": "#f3b189",
+    "usage": "Tier 2 and 3: the base of an acinar cell. Acini are rosettes of 6 to 9 pyramidal cells around a lumen, nucleus basal, granules apical, a heavier ink wall around each acinus."
+   },
+   {
+    "name": "cell-beta",
+    "value": "#ee9fa6",
+    "usage": "Islet beta cells, through the core. A rose related to the insulin tint."
+   },
+   {
+    "name": "cell-alpha",
+    "value": "#bb9cca",
+    "usage": "Islet alpha cells: toward the rim (62% of the cells touching an acinus) and along the capillaries (40% of the cells beside one). Never a closed ring. A relative of the beta rose, not a new hue."
+   },
+   {
+    "name": "cell-delta",
+    "value": "#ab76a2",
+    "usage": "Islet delta cells, about 8%, scattered. A deeper relative of the beta rose."
+   },
+   {
+    "name": "capillary",
+    "value": "#dd6e68",
+    "usage": "The wall of a capillary cut across. Capillaries are never running lines, plain red blobs or pale openings with loose red dots. In an islet each takes a whole cell-place (about one per 22 cells); in the acinar bed each sits in a soft-cornered pocket the acini are cut back around."
+   },
+   {
+    "name": "shadow-pancreas",
+    "value": "#8e78b8",
+    "usage": "The shadow hue of the pancreas family. A surface turned from the light moves toward this violet; stipple is drawn in it. Shade by hue, never by multiplying a colour darker."
+   },
+   {
+    "name": "light-pancreas",
+    "value": "#ffeec4",
+    "usage": "The light hue of the pancreas family. A lit surface moves toward this butter."
+   },
+   {
+    "name": "duodenum-opening",
+    "value": "#b8697a",
+    "usage": "The cut opening of the duodenal tube, a deeper rose so it reads as a hollow and not as paper."
+   },
+   {
+    "name": "wash-acinar-apex",
+    "value": "#fbe0b0",
+    "usage": "The granule-filled apex of an acinar cell at the lumen. Each acinus is washed from this to wash-acinar: a radial wash close up, two flat steps at the lobule scale."
+   },
+   {
+    "name": "capillary-deep",
+    "value": "#a04455",
+    "usage": "The blood inside a capillary: a deeper red than the wall, so the section reads as a hollow you look into."
+   },
+   {
+    "name": "nucleus",
+    "value": "#5b3b70",
+    "usage": "Cell nuclei at tiers 2 and 3: plum, not ink. Near-black nuclei pepper a frame and fight the subject."
+   },
+   {
+    "name": "cell-wall",
+    "value": "#6b4a70",
+    "usage": "Inner cell walls at tiers 2 and 3. Ink is kept for the outline of a whole structure: an acinus, the gland, a villus contour."
+   },
+   {
+    "name": "halo-organ",
+    "value": "#ffe9bf",
+    "usage": "Tier 4: the warm halo around the one lit organ inside the silhouette."
+   },
+   {
+    "name": "cell-goblet",
+    "value": "#f5dad4",
+    "usage": "Goblet cells in the gut lining: 9% of cells, paler, a dot at the centre."
+   },
+   {
+    "name": "cell-l",
+    "value": "#60ac9d",
+    "usage": "L cells in the gut lining, about 3 in 1000: the teal of the GLP-1 receptor family, the only cool accent in the villi field."
+   },
+   {
+    "name": "shadow-gut",
+    "value": "#816fa9",
+    "usage": "The shadow hue of the gut family: the side of a villus turned from the light moves toward this violet."
+   },
+   {
+    "name": "light-gut",
+    "value": "#fce7d1",
+    "usage": "The light hue of the gut family: the lit side of a villus moves toward this cream."
+   },
+   {
+    "name": "crypt-deep",
+    "value": "#613f65",
+    "usage": "The deep of a crypt in the gut lining. Cells going down a pit move toward shadow-gut and then toward this; it is never used as a flat fill for a hole."
+   },
+   {
+    "name": "lumen-ground",
+    "value": "#f8e8d3",
+    "usage": "The gut lumen: the cream ground and the first of three tile tints of its honeycomb."
+   },
+   {
+    "name": "lumen-tile-blush",
+    "value": "#f3d8cb",
+    "usage": "Gut lumen honeycomb: the blush tile. No two tiles of one tint sit side by side."
+   },
+   {
+    "name": "lumen-tile-apricot",
+    "value": "#f6d7bc",
+    "usage": "Gut lumen honeycomb: the apricot tile. Tint tiles toward pink and apricot; cream mixed toward violet goes grey."
+   },
+   {
+    "name": "lumen-ribbon",
+    "value": "#e3d0f0",
+    "usage": "Gut lumen: the wandering ribbons, arcs across each hexagon turned at random so they join into loops."
+   },
+   {
+    "name": "lumen-ribbon-edge",
+    "value": "#b093cb",
+    "usage": "Gut lumen: the edge on each side of a ribbon and, a little deeper, the beads down its middle."
+   },
+   {
+    "name": "wash-lamina",
+    "value": "#c394af",
+    "usage": "The lamina propria in the core of a villus: loose cells as one Voronoi, a dusky mauve of the gut family."
+   },
+   {
+    "name": "lacteal",
+    "value": "#edd9cc",
+    "usage": "The lacteal in the middle of a villus core: a pale lymph vessel with a wall, drawn as the capillaries are."
+   },
+   {
+    "name": "granule-l",
+    "value": "#2d6c64",
+    "usage": "Secretory granules in the L cell, crowded toward its base, and docked along the base at release."
+   },
+   {
+    "name": "plume-glp1",
+    "value": "#96d1c3",
+    "usage": "GLP-1 leaving the L cell at tier 2: a fine plume of small dots crossing the basement line and thinning out inside the capillary."
+   },
+   {
+    "name": "blood-wine",
+    "value": "#8e2f4c",
+    "usage": "The shadow hue of the blood family: the hollow of a red cell and its outline."
+   },
+   {
+    "name": "blood-glow",
+    "value": "#ffc9a6",
+    "usage": "The light hue of the blood family: a short light on the rim of a red cell."
+   },
+   {
+    "name": "blood-ground",
+    "value": "#f4bfc0",
+    "usage": "The ground inside a vessel: a rose red that rhymes with the capillary wall of the tissue frames without matching it. No apricot or straw: it reads yellow."
+   },
+   {
+    "name": "blood-tile-1",
+    "value": "#efa9ae",
+    "usage": "Blood pavement: one of three rose tints of the soft-cornered cells of the ground pattern; no two alike side by side."
+   },
+   {
+    "name": "blood-tile-2",
+    "value": "#f2b4b3",
+    "usage": "Blood pavement: one of three rose tints of the soft-cornered cells of the ground pattern; no two alike side by side."
+   },
+   {
+    "name": "blood-tile-3",
+    "value": "#eba0ac",
+    "usage": "Blood pavement: one of three rose tints of the soft-cornered cells of the ground pattern; no two alike side by side."
+   },
+   {
+    "name": "blood-line",
+    "value": "#d97c88",
+    "usage": "Blood pavement: the line round each cell of the ground pattern."
+   },
+   {
+    "name": "blood-far",
+    "value": "#e69395",
+    "usage": "The far layer of red cells inside a vessel: pale, sparse, always whole; it moves slower than the near cells and faster than the ground."
+   },
+   {
+    "name": "cell-white",
+    "value": "#e6c3d8",
+    "usage": "A white blood cell: one to a frame, smooth outline, close in value to the ground, lobed nucleus only a step deeper. What is not red in the blood is lilac."
+   },
+   {
+    "name": "platelet",
+    "value": "#e3c3de",
+    "usage": "Platelets: small lilac ovals a third the width of a red cell, with two or three specks."
+   },
+   {
+    "name": "mol-light",
+    "value": "#fff2d8",
+    "usage": "The light every molecule is lit toward. The quarter of a molecule's real surface that faces the light (upper left) is drawn as one flat shape in the fill mixed 28% toward this."
+   },
+   {
+    "name": "mol-shadow-tint",
+    "value": "#6e5a9a",
+    "usage": "A touch of this violet (10%) goes into every molecule's shadow shape, on top of the 32% toward its own outline colour, so shadows lean cool."
+   },
+   {
+    "name": "type-cloud",
+    "value": "#fff8ea",
+    "usage": "The soft cream of two things: the cloud behind ink type and the scale bar over a picture at full strength, and the pulsing halo round a thing being named. Always soft-edged; never a box or a crisp ring."
+   },
+   {
+    "name": "cavity-ground",
+    "value": "#dcd5ee",
+    "usage": "Inside the body, between the organs: a clean light lavender taken from the silhouette. Mixing the silhouette with cream paper goes grey; do not."
+   },
+   {
+    "name": "cavity-vessel",
+    "value": "#bab3d2",
+    "usage": "The vessel tree of the body field, and the line of the hinted neighbouring organs."
+   },
+   {
+    "name": "cavity-vessel-core",
+    "value": "#bea5c0",
+    "usage": "A hint of red down the middle of every vessel wide enough to hold a line: the blood inside. Only a hint; a stronger red was too hard."
+   }
+  ]
+ },
+ "type": {
+  "fonts": [
+   {
+    "family": "EB Garamond",
+    "file": "fonts/EBGaramond-400.ttf",
+    "weight": "400",
+    "style": "normal"
+   },
+   {
+    "family": "EB Garamond",
+    "file": "fonts/EBGaramond-400-Italic.ttf",
+    "weight": "400",
+    "style": "italic"
+   },
+   {
+    "family": "EB Garamond",
+    "file": "fonts/EBGaramond-500.ttf",
+    "weight": "500",
+    "style": "normal"
+   },
+   {
+    "family": "EB Garamond",
+    "file": "fonts/EBGaramond-500-Italic.ttf",
+    "weight": "500",
+    "style": "italic"
+   },
+   {
+    "family": "EB Garamond",
+    "file": "fonts/EBGaramond-600.ttf",
+    "weight": "600",
+    "style": "normal"
+   },
+   {
+    "family": "IBM Plex Mono",
+    "file": "fonts/IBMPlexMono-400.ttf",
+    "weight": "400",
+    "style": "normal"
+   },
+   {
+    "family": "IBM Plex Mono",
+    "file": "fonts/IBMPlexMono-500.ttf",
+    "weight": "500",
+    "style": "normal"
+   }
+  ],
+  "families": {
+   "serif": "\"EB Garamond\", Garamond, Georgia, serif",
+   "mono": "\"IBM Plex Mono\", Menlo, Consolas, monospace"
+  },
+  "groups": [
+   {
+    "name": "Plate captions (serif)",
+    "family": "serif",
+    "styles": [
+     {
+      "name": "title-card",
+      "fontSize": "96px",
+      "lineHeight": "92px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.01em",
+      "sample": "Hacking Hunger",
+      "usage": "Film title and act titles on paper, 1080p frame; double for 4K. Ink."
+     },
+     {
+      "name": "plate-title",
+      "fontSize": "44px",
+      "lineHeight": "52px",
+      "fontWeight": 500,
+      "sample": "Plate V.  The GLP-1 receptor with semaglutide and Gs.",
+      "usage": "The caption line under a plate: roman number, two spaces, a full sentence with a full stop. Ink. 1080p frame; double for 4K."
+     },
+     {
+      "name": "plate-caption",
+      "fontSize": "44px",
+      "lineHeight": "52px",
+      "fontWeight": 500,
+      "fontStyle": "italic",
+      "sample": "the drug sits in the receptor's pocket, the G protein below",
+      "usage": "The descriptive clause of a caption, italic, following the roman title on the same baseline or the next line."
+     },
+     {
+      "name": "note",
+      "fontSize": "28px",
+      "lineHeight": "36px",
+      "fontWeight": 400,
+      "sample": "Discovered in Toronto in 1921, insulin reached a ward within months.",
+      "usage": "Longer notes on tier-4 history plates and title cards. Ink or ink-muted on paper."
+     }
+    ]
+   },
+   {
+    "name": "Labels (mono)",
+    "family": "mono",
+    "styles": [
+     {
+      "name": "label",
+      "fontSize": "22px",
+      "lineHeight": "28px",
+      "fontWeight": 400,
+      "letterSpacing": "0.08em",
+      "sample": "PDB 7KI0 \u00b7 cryo-EM \u00b7 10 px per \u00e5ngstr\u00f6m",
+      "usage": "The technical line under a caption: PDB id, method, scale. Ink-muted on paper and ochre, ink on dusky. Letterspaced, never bold."
+     },
+     {
+      "name": "scene-code",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "fontWeight": 500,
+      "letterSpacing": "0.12em",
+      "sample": "S05 \u00b7 TIER 1 \u00b7 MOLECULAR",
+      "usage": "Scene codes, tier markers and render stamps in the plate margin. Uppercase, ink-muted."
+     },
+     {
+      "name": "molecule-label",
+      "fontSize": "22px",
+      "lineHeight": "28px",
+      "fontWeight": 400,
+      "letterSpacing": "0.04em",
+      "sample": "semaglutide",
+      "usage": "A molecule's name beside it on the field, lowercase as in palette_v3.json, set in its own outline colour (mol-\u2026-line) so the label belongs to the shape."
+     }
+    ]
+   }
+  ]
+ },
+ "spacing": {
+  "note": "Molecular scale: 10 px per \u00e5ngstr\u00f6m, the scale the SVG icons are drawn at. The renderer scales all of these with the camera.",
+  "tokens": [
+   {
+    "name": "angstrom",
+    "value": "10px",
+    "usage": "One \u00e5ngstr\u00f6m at icon scale. Every other length is a multiple of this."
+   },
+   {
+    "name": "head-radius",
+    "value": "30px",
+    "usage": "3 \u00c5 lipid head radius in the bilayer mosaic."
+   },
+   {
+    "name": "head-pitch",
+    "value": "70px",
+    "usage": "7 \u00c5 pitch between lipid heads along each leaflet."
+   },
+   {
+    "name": "cell-intra",
+    "value": "120px",
+    "usage": "12 \u00c5 hexagon side (circumradius, 20.8 \u00c5 across flats): the cell of the intracellular flowers at tier 1. Double it at tier 2."
+   },
+   {
+    "name": "cell-extra",
+    "value": "160px",
+    "usage": "16 \u00c5 hexagon side (circumradius, 27.7 \u00c5 across flats): the cell of the extracellular rosettes at tier 1. Double it at tier 2."
+   },
+   {
+    "name": "bilayer",
+    "value": "360px",
+    "usage": "36 \u00c5 bilayer thickness, centred on the median screen height of the protein's transmembrane residues."
+   },
+   {
+    "name": "safe-margin",
+    "value": "56px",
+    "usage": "Type and the scale bar keep this far from the frame edge at 1280 wide (a little under 5% of the width)."
+   }
+  ]
+ },
+ "radius": {
+  "tokens": [
+   {
+    "name": "radius-facet",
+    "value": "5px",
+    "usage": "0.5 \u00c5 rounding on every molecule facet corner, mitre joins otherwise. The only rounding a molecule gets."
+   },
+   {
+    "name": "radius-head",
+    "value": "30px",
+    "usage": "Lipid heads are discs: radius equals head-radius."
+   }
+  ]
+ },
+ "line": {
+  "note": "Stroke widths at 10 px per \u00e5ngstr\u00f6m.",
+  "tokens": [
+   {
+    "name": "line-outline",
+    "value": "5px",
+    "usage": "0.5 \u00c5 molecule outline in the molecule's own mol-\u2026-line colour. The only line a molecule has."
+   },
+   {
+    "name": "line-field",
+    "value": "4px",
+    "usage": "0.4 \u00c5 lattice line on both fields, in extra-line or intra-line."
+   },
+   {
+    "name": "line-bilayer-edge",
+    "value": "6px",
+    "usage": "0.6 \u00c5 top and bottom edge of the bilayer, bilayer-line."
+   },
+   {
+    "name": "line-bilayer",
+    "value": "3.5px",
+    "usage": "0.35 \u00c5 head outlines and tail zig-zags, bilayer-line."
+   },
+   {
+    "name": "line-midline",
+    "value": "2.5px",
+    "usage": "0.25 \u00c5 bilayer midline, bilayer-line at opacity-midline."
+   },
+   {
+    "name": "line-organ-hero",
+    "value": "3px",
+    "usage": "1080p frame: the ink outline of a whole structure at tissue scale (the gland, an acinus, a villus contour, the line under a vessel wall). Inner cell walls are cell-wall, thinner."
+   },
+   {
+    "name": "line-chart",
+    "value": "2px",
+    "usage": "Proposed, 1080p frame: data lines on a data plate; markers 8px discs with a 2px paper ring."
+   },
+   {
+    "name": "line-chart-grid",
+    "value": "1px",
+    "usage": "Proposed, 1080p frame: chart grid and axes."
+   }
+  ]
+ },
+ "opacity": {
+  "tokens": [
+   {
+    "name": "opacity-midline",
+    "value": "0.35",
+    "usage": "The bilayer midline where tails meet."
+   },
+   {
+    "name": "opacity-tooth",
+    "value": "0.10",
+    "usage": "Paper grain: fine monochrome specks on paper, the same strength in every frame."
+   },
+   {
+    "name": "opacity-field-tier-1",
+    "value": "1",
+    "usage": "Lattice line opacity at molecular scale. At tissue scale there is no molecular lattice: each kind of space has its own pattern (see Fields and texture)."
+   },
+   {
+    "name": "opacity-veil",
+    "value": "0.3",
+    "usage": "Naming: a veil of paper at this strength over the whole picture while something is named. The named thing is redrawn on top at full strength, inside its halo. (The backup list uses a heavier veil, 0.68.)"
+   }
+  ]
+ }
+}
